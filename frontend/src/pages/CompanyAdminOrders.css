@@ -1,0 +1,877 @@
+/* =====================================================
+   COMPANY ADMIN - ORDERS PAGE
+   ===================================================== */
+
+.company-admin-orders-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.company-admin-orders-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.company-admin-orders-header h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.company-admin-orders-header p {
+    margin: 7px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+/* =====================================================
+   REFRESH SPINNER
+   ===================================================== */
+
+.company-admin-orders-spin {
+    animation: companyAdminOrdersSpin 0.8s linear infinite;
+}
+
+@keyframes companyAdminOrdersSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =====================================================
+   LOADING
+   ===================================================== */
+
+.company-admin-orders-loading {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #64748b;
+}
+
+.company-admin-orders-loading p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.company-admin-orders-spinner {
+    width: 34px;
+    height: 34px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: companyAdminOrdersSpin 0.8s linear infinite;
+}
+
+/* =====================================================
+   SUMMARY CARDS
+   ===================================================== */
+
+.company-admin-order-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.company-admin-order-summary > * {
+    min-width: 0;
+}
+
+.company-admin-summary-card {
+    min-height: 82px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-sizing: border-box;
+}
+
+.company-admin-summary-card > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.company-admin-summary-card span {
+    display: block;
+    font-size: 13px;
+    line-height: 1.3;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.company-admin-summary-card strong {
+    display: block;
+    font-size: 23px;
+    line-height: 1.1;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.company-admin-summary-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-admin-summary-icon.blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.company-admin-summary-icon.orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.company-admin-summary-icon.green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.company-admin-summary-icon.red {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* =====================================================
+   FILTERS
+   ===================================================== */
+
+.company-admin-order-filters {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    margin-bottom: 20px;
+}
+
+.company-admin-order-search {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.company-admin-order-search svg {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.company-admin-order-search input {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px 0 40px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #1e293b;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.company-admin-order-search input::placeholder {
+    color: #94a3b8;
+}
+
+.company-admin-order-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.company-admin-order-filters select {
+    width: 170px;
+    height: 42px;
+    padding: 0 34px 0 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #334155;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.company-admin-order-filters select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =====================================================
+   ORDERS TABLE
+   ===================================================== */
+
+.company-admin-orders-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.company-admin-orders-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.company-admin-orders-table thead {
+    background: #f8fafc;
+}
+
+.company-admin-orders-table th {
+    padding: 13px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    white-space: nowrap;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.company-admin-orders-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eef2f7;
+    color: #334155;
+    font-size: 13px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.company-admin-orders-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.company-admin-orders-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.company-admin-orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.company-admin-orders-table td strong {
+    color: #1e293b;
+    font-weight: 650;
+}
+
+.company-admin-table-person {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #475569;
+}
+
+.company-admin-table-person svg {
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   EMPTY TABLE
+   ===================================================== */
+
+.company-admin-orders-empty {
+    height: 260px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: normal !important;
+    color: #94a3b8 !important;
+}
+
+.company-admin-orders-empty svg {
+    display: block;
+    margin: 0 auto 12px;
+    color: #cbd5e1;
+}
+
+.company-admin-orders-empty strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #475569 !important;
+    font-size: 15px;
+}
+
+.company-admin-orders-empty span {
+    display: block;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* =====================================================
+   ORDER DETAILS MODAL OVERLAY
+   ===================================================== */
+
+.company-admin-order-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(2px);
+}
+
+/* =====================================================
+   ORDER DETAILS MODAL
+   ===================================================== */
+
+.company-admin-order-modal {
+    width: min(940px, 100%);
+    max-height: calc(100vh - 48px);
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
+}
+
+/* =====================================================
+   MODAL HEADER
+   ===================================================== */
+
+.company-admin-order-modal-header {
+    flex-shrink: 0;
+    min-height: 76px;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.company-admin-order-modal-header > div {
+    min-width: 0;
+}
+
+.company-admin-order-modal-header h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.company-admin-order-modal-header p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.company-admin-order-modal-close {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border: none;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.company-admin-order-modal-close:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* =====================================================
+   MODAL CONTENT
+   ===================================================== */
+
+.company-admin-order-modal-content {
+    flex: 1;
+    min-height: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: #ffffff;
+}
+
+.company-admin-order-modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.company-admin-order-modal-content::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.company-admin-order-modal-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.company-admin-order-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* =====================================================
+   MODAL LOADING
+   ===================================================== */
+
+.company-admin-modal-loading {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.company-admin-modal-loading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =====================================================
+   MODAL ERROR
+   ===================================================== */
+
+.company-admin-modal-error {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.company-admin-modal-error h3 {
+    margin: 0 0 7px;
+    color: #b91c1c;
+    font-size: 18px;
+}
+
+.company-admin-modal-error p {
+    margin: 0 0 20px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =====================================================
+   DETAIL SECTION
+   ===================================================== */
+
+.company-admin-detail-section {
+    margin-bottom: 24px;
+}
+
+.company-admin-detail-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.company-admin-detail-section h3 {
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e293b;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.company-admin-detail-section h3 svg {
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   DETAIL GRID
+   ===================================================== */
+
+.company-admin-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.company-admin-detail-grid > div {
+    min-width: 0;
+    min-height: 68px;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+.company-admin-detail-grid > div > span {
+    display: block;
+    margin: 0;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
+.company-admin-detail-grid > div > strong {
+    display: block;
+    margin: 0;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   STATUS INSIDE DETAIL CARD
+   ===================================================== */
+
+.company-admin-detail-grid > div > strong .badge,
+.company-admin-detail-grid > div > strong > span {
+    display: inline-flex;
+}
+
+/* =====================================================
+   PRODUCTS TABLE
+   ===================================================== */
+
+.company-admin-items-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.company-admin-items-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+}
+
+.company-admin-items-table thead {
+    background: #f8fafc;
+}
+
+.company-admin-items-table th {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    white-space: nowrap;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
+.company-admin-items-table td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.company-admin-items-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.company-admin-items-table tbody tr:hover {
+    background: #fafcff;
+}
+
+.company-admin-items-table td:first-child {
+    min-width: 200px;
+}
+
+.company-admin-items-table td:first-child strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #1e293b;
+    font-weight: 650;
+}
+
+.company-admin-items-table td:first-child span {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.company-admin-items-table td:nth-child(2),
+.company-admin-items-table td:nth-child(3),
+.company-admin-items-table td:nth-child(4) {
+    white-space: nowrap;
+}
+
+.company-admin-items-table td:last-child strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* =====================================================
+   ORDER TOTALS
+   ===================================================== */
+
+.company-admin-order-totals {
+    width: 330px;
+    max-width: 100%;
+    margin: 18px 0 0 auto;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.company-admin-order-totals > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 7px 0;
+}
+
+.company-admin-order-totals span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.company-admin-order-totals strong {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.company-admin-grand-total {
+    margin-top: 7px;
+    padding-top: 13px !important;
+    border-top: 1px solid #dbe2ea;
+}
+
+.company-admin-grand-total span {
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.company-admin-grand-total strong {
+    color: #2563eb;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+/* =====================================================
+   MODAL FOOTER
+   ===================================================== */
+
+.company-admin-order-modal-footer {
+    flex-shrink: 0;
+    min-height: 66px;
+    padding: 13px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.company-admin-order-modal-footer > div {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.company-admin-order-modal-footer > div svg {
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+.company-admin-order-modal-footer > div strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1100px) {
+    .company-admin-order-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .company-admin-order-modal {
+        width: min(900px, 100%);
+    }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+    .company-admin-orders-page {
+        padding: 18px;
+    }
+
+    .company-admin-orders-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .company-admin-orders-header h1 {
+        font-size: 24px;
+    }
+
+    .company-admin-order-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .company-admin-order-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .company-admin-order-search {
+        width: 100%;
+    }
+
+    .company-admin-order-filters select {
+        width: 100%;
+    }
+
+    .company-admin-order-modal-overlay {
+        padding: 10px;
+    }
+
+    .company-admin-order-modal {
+        max-height: calc(100vh - 20px);
+        border-radius: 11px;
+    }
+
+    .company-admin-order-modal-header {
+        padding: 16px;
+    }
+
+    .company-admin-order-modal-content {
+        padding: 17px;
+    }
+
+    .company-admin-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .company-admin-order-totals {
+        width: 100%;
+    }
+
+    .company-admin-order-modal-footer {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .company-admin-order-modal-footer > div {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 450px) {
+    .company-admin-orders-page {
+        padding: 14px;
+    }
+
+    .company-admin-summary-card {
+        padding: 15px;
+    }
+
+    .company-admin-summary-card strong {
+        font-size: 21px;
+    }
+
+    .company-admin-order-modal-header h2 {
+        font-size: 18px;
+    }
+
+    .company-admin-order-modal-content {
+        padding: 14px;
+    }
+
+    .company-admin-detail-grid > div {
+        padding: 12px;
+    }
+}
+
+/* =====================================================
+   NO PRODUCTS
+   ===================================================== */
+
+.company-admin-no-products {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.company-admin-no-products svg {
+    color: #94a3b8;
+}

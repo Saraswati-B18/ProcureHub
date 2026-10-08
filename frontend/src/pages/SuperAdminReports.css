@@ -1,0 +1,281 @@
+.super-admin-reports-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+
+.super-admin-reports-header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.super-admin-reports-header p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Summary */
+
+.super-admin-reports-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.super-admin-reports-card {
+  min-height: 120px;
+}
+
+.super-admin-reports-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.super-admin-reports-card-content p {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.super-admin-reports-card-content h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.super-admin-reports-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.super-admin-reports-icon.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.super-admin-reports-icon.orange {
+  background: #fff7ed;
+  color: #f79009;
+}
+
+.super-admin-reports-icon.green {
+  background: #ecfdf3;
+  color: #12b76a;
+}
+
+.super-admin-reports-icon.purple {
+  background: #f4f3ff;
+  color: #7a5af8;
+}
+
+/* Two Column Sections */
+
+.super-admin-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.super-admin-reports-section {
+  min-height: 280px;
+}
+
+.super-admin-reports-section-header {
+  margin-bottom: 22px;
+}
+
+.super-admin-reports-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.super-admin-reports-title-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+  flex-shrink: 0;
+}
+
+.super-admin-reports-title-icon.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.super-admin-reports-title-icon.green {
+  background: #ecfdf3;
+  color: #12b76a;
+}
+
+.super-admin-reports-title-icon.purple {
+  background: #f4f3ff;
+  color: #7a5af8;
+}
+
+.super-admin-reports-section-header h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.super-admin-reports-section-header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Statistics */
+
+.super-admin-reports-stat-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.super-admin-reports-stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.super-admin-reports-stat-row:last-child {
+  border-bottom: none;
+}
+
+.super-admin-reports-stat-row span {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.super-admin-reports-stat-row strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+/* Activity */
+
+.super-admin-reports-activity {
+  min-height: 320px;
+}
+
+.super-admin-reports-empty {
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: var(--text-muted);
+}
+
+.super-admin-reports-empty h3 {
+  margin: 12px 0 5px;
+
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.super-admin-reports-empty p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Information */
+
+.super-admin-reports-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  background: #f8faff;
+  border: 1px solid #dbeafe;
+}
+
+.super-admin-reports-info-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #eff6ff;
+  color: var(--primary);
+}
+
+.super-admin-reports-info h3 {
+  margin: 0 0 5px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.super-admin-reports-info p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .super-admin-reports-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .super-admin-reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .super-admin-reports-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .super-admin-reports-header h1 {
+    font-size: 24px;
+  }
+}

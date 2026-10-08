@@ -1,0 +1,781 @@
+.supplier-reports-page {
+    min-height: 100%;
+    padding: 34px 38px 45px;
+    background: #f6f8fc;
+    color: #172033;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.supplier-reports-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 26px;
+}
+
+.supplier-reports-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.supplier-reports-header h1 {
+    margin: 0;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.supplier-reports-header p {
+    margin: 7px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.supplier-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.supplier-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.13);
+}
+
+.supplier-report-refresh {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.supplier-report-refresh button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dce3ec;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #2563eb;
+    cursor: pointer;
+}
+
+.supplier-report-refresh button:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+
+/* ==========================================
+   WARNING
+   ========================================== */
+
+.supplier-reports-warning {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
+    padding: 12px 15px;
+    border: 1px solid #fed7aa;
+    border-radius: 9px;
+    background: #fff7ed;
+    color: #c2410c;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   KEY METRICS
+   ========================================== */
+
+.supplier-report-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 20px;
+}
+
+.supplier-report-metric-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 112px;
+    padding: 18px;
+    border: 1px solid #e5eaf1;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.supplier-report-metric-icon {
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+}
+
+.supplier-report-metric-icon.blue {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.supplier-report-metric-icon.purple {
+    color: #7c3aed;
+    background: #f5f3ff;
+}
+
+.supplier-report-metric-icon.green {
+    color: #16a34a;
+    background: #ecfdf3;
+}
+
+.supplier-report-metric-icon.orange {
+    color: #ea580c;
+    background: #fff7ed;
+}
+
+.supplier-report-metric-card span {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.supplier-report-metric-card strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.supplier-report-metric-card small {
+    display: block;
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   TWO COLUMN
+   ========================================== */
+
+.supplier-report-two-column {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   PANELS
+   ========================================== */
+
+.supplier-report-panel {
+    margin-bottom: 18px;
+    padding: 21px 22px;
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.supplier-report-two-column .supplier-report-panel {
+    margin-bottom: 0;
+}
+
+.supplier-report-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.supplier-report-panel-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #172033;
+}
+
+.supplier-report-panel-header p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.supplier-report-panel-header > svg {
+    color: #64748b;
+}
+
+
+/* ==========================================
+   SALES CHART
+   ========================================== */
+
+.supplier-sales-chart {
+    height: 255px;
+    display: flex;
+    align-items: stretch;
+    gap: 17px;
+    padding-top: 12px;
+}
+
+.supplier-sales-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.supplier-sales-value {
+    min-height: 30px;
+    margin-bottom: 6px;
+    color: #475569;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.supplier-sales-bar-area {
+    flex: 1;
+    width: 100%;
+    max-width: 48px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 7px 7px 2px 2px;
+    background: #f1f5f9;
+}
+
+.supplier-sales-bar {
+    width: 100%;
+    min-height: 5px;
+    border-radius: 7px 7px 2px 2px;
+    background: #3b82f6;
+    transition: height 0.4s ease;
+}
+
+.supplier-sales-column > span {
+    margin-top: 9px;
+    color: #64748b;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   ORDER PERFORMANCE
+   ========================================== */
+
+.supplier-order-performance {
+    display: flex;
+    flex-direction: column;
+}
+
+.supplier-order-performance > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.supplier-order-performance > div:last-child {
+    border-bottom: none;
+}
+
+.supplier-order-performance span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.supplier-order-performance strong {
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   INVOICE SUMMARY
+   ========================================== */
+
+.supplier-invoice-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+}
+
+.supplier-invoice-summary-grid > div {
+    padding: 14px;
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.supplier-invoice-summary-grid span {
+    display: block;
+    margin-bottom: 5px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.supplier-invoice-summary-grid strong {
+    display: block;
+    font-size: 16px;
+}
+
+.supplier-invoice-summary-grid small {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.paid-value {
+    color: #059669;
+}
+
+.outstanding-value {
+    color: #d97706;
+}
+
+.overdue-value {
+    color: #dc2626;
+}
+
+
+/* ==========================================
+   INVENTORY
+   ========================================== */
+
+.supplier-inventory-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 11px;
+}
+
+.supplier-inventory-grid > div {
+    min-height: 92px;
+    padding: 15px;
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.supplier-inventory-grid span {
+    display: block;
+    margin-bottom: 7px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.supplier-inventory-grid strong {
+    font-size: 21px;
+}
+
+.supplier-inventory-warning {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d97706;
+    background: #fffbeb !important;
+    border-color: #fde68a !important;
+}
+
+.supplier-inventory-warning > div {
+    min-width: 0;
+}
+
+
+/* ==========================================
+   RANKING
+   ========================================== */
+
+.supplier-ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.supplier-ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.supplier-ranking-number {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.supplier-ranking-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.supplier-ranking-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 7px;
+}
+
+.supplier-ranking-top strong {
+    overflow: hidden;
+    color: #172033;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.supplier-ranking-top span {
+    flex-shrink: 0;
+    color: #172033;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.supplier-ranking-bar {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #eef2f7;
+}
+
+.supplier-ranking-bar > div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3b82f6;
+}
+
+.supplier-ranking-content small {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   CUSTOMERS
+   ========================================== */
+
+.supplier-customer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.supplier-customer-card {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.supplier-customer-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.supplier-customer-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.supplier-customer-content strong {
+    display: block;
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.supplier-customer-content span {
+    display: block;
+    margin: 4px 0 8px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.supplier-customer-bar {
+    height: 5px;
+    overflow: hidden;
+    margin-bottom: 7px;
+    border-radius: 999px;
+    background: #e2e8f0;
+}
+
+.supplier-customer-bar > div {
+    height: 100%;
+    border-radius: inherit;
+    background: #6366f1;
+}
+
+.supplier-customer-content b {
+    color: #172033;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   RECENT ORDERS TABLE
+   ========================================== */
+
+.supplier-report-table-wrapper {
+    overflow-x: auto;
+}
+
+.supplier-report-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.supplier-report-table th {
+    padding: 11px 13px;
+    border-bottom: 1px solid #e5eaf1;
+    background: #f8fafc;
+    text-align: left;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.supplier-report-table td {
+    padding: 13px;
+    border-bottom: 1px solid #edf1f5;
+    color: #475569;
+    font-size: 12px;
+}
+
+.supplier-report-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.supplier-report-table td strong {
+    color: #172033;
+}
+
+.supplier-report-status {
+    display: inline-flex;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.supplier-report-status.pending {
+    color: #b45309;
+    background: #fff7ed;
+}
+
+.supplier-report-status.accepted {
+    color: #047857;
+    background: #ecfdf5;
+}
+
+.supplier-report-status.processing {
+    color: #6d28d9;
+    background: #f5f3ff;
+}
+
+.supplier-report-status.packed {
+    color: #a16207;
+    background: #fef9c3;
+}
+
+.supplier-report-status.shipped {
+    color: #4338ca;
+    background: #eef2ff;
+}
+
+.supplier-report-status.delivered,
+.supplier-report-status.completed {
+    color: #047857;
+    background: #d1fae5;
+}
+
+.supplier-report-status.cancelled {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+
+/* ==========================================
+   NO DATA
+   ========================================== */
+
+.supplier-report-no-data {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   LOADING / ERROR
+   ========================================== */
+
+.supplier-reports-loading,
+.supplier-reports-error {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.supplier-reports-loading-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.supplier-reports-loading h2,
+.supplier-reports-error h2 {
+    margin: 0 0 7px;
+    font-size: 19px;
+}
+
+.supplier-reports-loading p,
+.supplier-reports-error p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.supplier-reports-error svg {
+    margin-bottom: 13px;
+    color: #dc2626;
+}
+
+.supplier-reports-error button {
+    margin-top: 18px;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .supplier-report-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .supplier-report-two-column {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .supplier-reports-page {
+        padding: 25px 18px 35px;
+    }
+
+    .supplier-reports-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .supplier-report-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-invoice-summary-grid,
+    .supplier-inventory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-customer-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .supplier-reports-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .supplier-report-panel {
+        padding: 17px;
+    }
+
+    .supplier-sales-chart {
+        gap: 8px;
+    }
+
+}

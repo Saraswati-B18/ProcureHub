@@ -1,0 +1,516 @@
+/* ==========================================
+   COMPANY ADMIN - MY COMPANY
+========================================== */
+
+.company-admin-company-page {
+  padding: 28px;
+}
+
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.company-admin-company-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.company-admin-company-heading h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #172033;
+}
+
+.company-admin-company-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+
+/* ==========================================
+   COMPANY OVERVIEW
+========================================== */
+
+.company-admin-company-overview {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.company-admin-company-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.company-admin-company-overview h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  color: #172033;
+}
+
+.company-admin-company-overview p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.company-admin-section-header {
+  margin-bottom: 20px;
+}
+
+.company-admin-section-header h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #172033;
+}
+
+.company-admin-section-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   COMPANY DETAILS
+========================================== */
+
+.company-admin-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.company-admin-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #e8edf5;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.company-admin-detail-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.company-admin-detail span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #718096;
+}
+
+.company-admin-detail strong {
+  display: block;
+  font-size: 14px;
+  color: #172033;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+
+/* ==========================================
+   COMPANY ADMIN PROFILE
+========================================== */
+
+.company-admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid #e8edf5;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.company-admin-profile-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1efff;
+  color: #6d5ce7;
+  flex-shrink: 0;
+}
+
+.company-admin-profile-info {
+  min-width: 180px;
+}
+
+.company-admin-profile-info h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  color: #172033;
+}
+
+.company-admin-profile-info span {
+  font-size: 12px;
+  color: #718096;
+}
+
+.company-admin-profile-contact {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.company-admin-profile-contact div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5f6b7a;
+  font-size: 13px;
+}
+
+.company-admin-profile-contact svg {
+  color: #718096;
+  flex-shrink: 0;
+}
+
+
+/* ==========================================
+   LOADING / ERROR / EMPTY
+========================================== */
+
+.company-admin-loading,
+.company-admin-error,
+.company-admin-empty {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #718096;
+}
+
+.company-admin-error {
+  color: #dc2626;
+}
+
+.company-admin-empty svg {
+  color: #718096;
+  margin-bottom: 12px;
+}
+
+.company-admin-empty h3 {
+  margin: 0 0 6px;
+  color: #172033;
+}
+
+.company-admin-empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .company-admin-company-page {
+    padding: 20px;
+  }
+
+  .company-admin-company-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-admin-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-admin-profile {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-admin-profile-contact {
+    margin-left: 0;
+  }
+
+}
+
+/* ==========================================
+   EDIT COMPANY BUTTON
+========================================== */
+
+.company-admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.company-admin-edit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.company-admin-edit-button:hover {
+  background: #eef4ff;
+  border-color: #2563eb;
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.company-admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.company-admin-modal {
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.company-admin-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.company-admin-modal-header h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #172033;
+}
+
+.company-admin-modal-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #718096;
+}
+
+.company-admin-modal-close {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #718096;
+  cursor: pointer;
+}
+
+.company-admin-modal-close:hover {
+  background: #f1f3f6;
+  color: #172033;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.company-admin-modal form {
+  padding: 24px;
+}
+
+.company-admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.company-admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.company-admin-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.company-admin-form-group input,
+.company-admin-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.company-admin-form-group input:focus,
+.company-admin-form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.company-admin-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.company-admin-full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* ==========================================
+   FORM MESSAGE
+========================================== */
+
+.company-admin-form-message {
+  margin-top: 18px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   MODAL ACTIONS
+========================================== */
+
+.company-admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.company-admin-cancel-button,
+.company-admin-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.company-admin-cancel-button {
+  border: 1px solid #d8dee9;
+  background: #ffffff;
+  color: #4b5563;
+}
+
+.company-admin-cancel-button:hover {
+  background: #f8fafc;
+}
+
+.company-admin-save-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.company-admin-save-button:hover {
+  background: #1d4ed8;
+}
+
+.company-admin-cancel-button:disabled,
+.company-admin-save-button:disabled,
+.company-admin-modal-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================
+   RESPONSIVE MODAL
+========================================== */
+
+@media (max-width: 650px) {
+
+  .company-admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-admin-full-width {
+    grid-column: auto;
+  }
+
+  .company-admin-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-admin-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .company-admin-cancel-button,
+  .company-admin-save-button {
+    width: 100%;
+  }
+
+}
